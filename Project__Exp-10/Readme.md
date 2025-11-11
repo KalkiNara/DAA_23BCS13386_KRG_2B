@@ -9,5 +9,5 @@ A maze is in the form of a 2D matrix in which some cells/blocks are blocked. One
 > Space Complexity: O(n^2). <br/> Output matrix is required so an extra space of size n*n is needed
 <br/>
 <br/>
-<i> Vanshit (UID: 23BCS10087) </i><br/>
-<i> Section: KRG 1A </i>
+<i> Vaibhav Kumar (UID: 23BCS13386) </i><br/>
+<i> Section: KRG 2B </i>
