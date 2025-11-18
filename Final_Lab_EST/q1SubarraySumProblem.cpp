@@ -1,23 +1,23 @@
 class Solution {
 public:
-    vector<int> nextGreaterElements(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> res(n, -1);
-        stack<int> st; 
+    int subarraySum(vector<int>& nums, int k) {
 
-        
-        for (int i = 0; i < 2 * n; i++) {
-            int idx = i % n;
+        unordered_map<int, int> mp;  
+        mp[0] = 1;  // prefix sum = 0 exists once
 
-            while (!st.empty() && nums[st.top()] < nums[idx]) {
-                res[st.top()] = nums[idx];
-                st.pop();
+        int prefix = 0;
+        int count = 0;
+
+        for (int x : nums) {
+            prefix += x;
+
+            if (mp.find(prefix - k) != mp.end()) {
+                count += mp[prefix - k];
             }
 
-            if (i < n) st.push(idx);
+            mp[prefix]++;
         }
-        return res;
+
+        return count;
     }
 };
-
-
